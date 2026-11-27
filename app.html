@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b"><title>Eunoia — Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">e</span><span>eunoia</span></a>
+      <div class="workspace-switch"><span class="workspace-icon">N</span><span><b>Northstar Studio</b><small>Workspace</small></span><span class="chevron">⌄</span></div>
+      <div class="sidebar-label">WORKSPACE</div><a class="app-nav active" href="#"><span>⌂</span> Overview</a><a class="app-nav" href="#"><span>▤</span> Channels <small>4</small></a><a class="app-nav" href="#"><span>✉</span> Direct messages</a>
+      <div class="sidebar-label">YOUR SPACE</div><a class="app-nav" href="#"><span>✳</span> My insights</a><a class="app-nav" href="#"><span>⚙</span> Settings</a>
+      <div class="sidebar-bottom"><div class="user-chip"><span class="user-avatar">B</span><span><b>Bhavya</b><small>Personal workspace</small></span><span>···</span></div></div>
+    </aside>
+    <main class="app-main">
+      <header class="app-topbar"><div><span class="crumb">Northstar Studio</span><span class="crumb-sep">/</span><b>Overview</b></div><div class="topbar-right"><span class="status-pill"><i></i> All systems operational</span><button class="icon-button">?</button></div></header>
+      <div class="app-content">
+        <div class="welcome-row"><div><div class="section-kicker">SATURDAY, NOVEMBER 28</div><h1>Good to have you here.</h1><p>Your team's space for thoughtful work starts here.</p></div><button class="button button-small" id="newMessage">＋ New message</button></div>
+        <div class="overview-grid">
+          <section class="panel conversations-panel"><div class="panel-heading"><div><span class="section-kicker">YOUR WORKSPACE</span><h2>Recent conversations</h2></div><button class="subtle-button">View all ↗</button></div>
+            <div class="conversation-row"><span class="channel-icon">#</span><div><b>launch-planning</b><p>Maya: I think we should revisit the timeline...</p></div><time>10:44 AM</time></div>
+            <div class="conversation-row"><span class="channel-icon">#</span><div><b>design-team</b><p>Jordan: Shared the updated direction.</p></div><time>Yesterday</time></div>
+            <div class="conversation-row"><span class="channel-icon">#</span><div><b>general</b><p>Alex: Thanks everyone for the feedback.</p></div><time>Yesterday</time></div>
+            <div class="conversation-row"><span class="channel-icon direct">M</span><div><b>Maya Chen</b><p>Can we sync on the next steps?</p></div><time>Mon</time></div>
+          </section>
+          <section class="panel insights-panel"><div class="panel-heading"><div><span class="section-kicker">EUONIA INTELLIGENCE</span><h2>A moment to consider</h2></div><span class="spark">✳</span></div><div class="insight-feature"><div class="insight-orbit">✳</div><h3>Make room for perspective.</h3><p>Conversations move better when people feel heard. Your private insights will appear here when they're useful.</p><span class="private-tag">PRIVATE TO YOU</span></div><div class="panel-bottom">Intelligence is designed to support, never interrupt.</div></section>
+        </div>
+        <section class="panel getting-started"><div><span class="section-kicker">A GOOD PLACE TO BEGIN</span><h2>Bring your team together.</h2><p>Create a conversation, invite collaborators, and make this space your own.</p></div><button class="outline-button" id="createChannel">Explore workspace <span>↗</span></button></section>
+        <div class="demo-notice"><span>ⓘ</span> This is a visual website prototype. Connect your existing Eunoia FastAPI backend to enable real accounts, workspaces, messaging, and intelligence.</div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast">This prototype is ready for backend integration.</div>
+  <script>
+    const toast=document.getElementById('toast');
+    function showToast(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2800)}
+    document.getElementById('newMessage').addEventListener('click',()=>showToast('Messaging will connect to your existing Eunoia backend.'));
+    document.getElementById('createChannel').addEventListener('click',()=>showToast('Workspace actions will be enabled when the existing API is connected.'));
+  </script>
+</body>
+</html>
